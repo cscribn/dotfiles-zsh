@@ -1,7 +1,6 @@
 eval "$(oh-my-posh init zsh --config "~/.config/oh-my-posh/themes/powerlevel10k_ansi_fwd.omp.json")"
 export LANG=en_US.UTF-8
-#alias ls='colorls --sd --dark'
-alias ls='ls -h --group-directories-first --color=auto'
+alias ls='colorls --sd --dark'
 setopt histignorealldups sharehistory
 
 # Use emacs keybindings even if our EDITOR is set to vi
