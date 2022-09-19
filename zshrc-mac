@@ -1,18 +1,25 @@
-eval "$(/opt/homebrew/bin/oh-my-posh init zsh --config ~/.oh-my-posh/themes/powerlevel10k_ansi.omp.json)"
+alias ls="ls --color=auto"
+
+# Only dress up if we're using a specific profile
+if [ "$ITERM_PROFILE" = "Zsh" ]; then
+	eval "$(/opt/homebrew/bin/oh-my-posh init zsh --config ~/.oh-my-posh/themes/powerlevel10k_ansi.omp.json)"
+
+	alias ls='colorls --sd --dark'
+
+	[[ -d ~/.zsh/zsh-autocomplete ]] ||
+	    git clone --depth 1 -- https://github.com/marlonrichert/zsh-autocomplete.git ~/.zsh/zsh-autocomplete
+	source ~/.zsh/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+
+	[[ -d ~/.zsh/zsh-autosuggestions ]] ||
+	    git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
+	source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+	[[ -d ~/.zsh/zsh-syntax-highlighting ]] ||
+	    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git  ~/.zsh/zsh-syntax-highlighting
+	source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
+fi
+
 export PATH=/opt/homebrew/bin:$PATH
-alias ls='colorls --sd --dark'
-
-[[ -d ~/.zsh/zsh-autocomplete ]] ||
-    git clone --depth 1 -- https://github.com/marlonrichert/zsh-autocomplete.git ~/.zsh/zsh-autocomplete
-source ~/.zsh/zsh-autocomplete/zsh-autocomplete.plugin.zsh
-
-[[ -d ~/.zsh/zsh-autosuggestions ]] ||
-    git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-
-[[ -d ~/.zsh/zsh-syntax-highlighting ]] ||
-    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git  ~/.zsh/zsh-syntax-highlighting
-source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
