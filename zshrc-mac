@@ -4,8 +4,6 @@ alias ls="ls --color=auto"
 if [ "$ITERM_PROFILE" = "Zsh" ]; then
 	eval "$(/opt/homebrew/bin/oh-my-posh init zsh --config ~/.oh-my-posh/themes/powerlevel10k_ansi.omp.json)"
 
-	alias ls='colorls --sd --dark'
-
 	[[ -d ~/.zsh/zsh-autocomplete ]] ||
         git clone --depth 1 -- https://github.com/marlonrichert/zsh-autocomplete.git ~/.zsh/zsh-autocomplete
 	source ~/.zsh/zsh-autocomplete/zsh-autocomplete.plugin.zsh
