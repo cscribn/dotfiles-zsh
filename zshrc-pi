@@ -1,7 +1,7 @@
 eval "$(oh-my-posh init zsh --config "~/.oh-my-posh/themes/powerlevel10k_ansi.omp.json")"
 export TERM=xterm-256color
 export COLORTERM=truecolor
-alias ls='ls --colors=auto'
+alias ls='ls -h --color=auto --group-directories-first'
 
 setopt histignorealldups sharehistory
 

@@ -1,4 +1,4 @@
-alias ls="ls --color=auto"
+alias ls="gls -h --color=auto --group-directories-first"
 
 # Only dress up if we're using a specific profile
 if [ "$ITERM_PROFILE" = "Zsh" ]; then
