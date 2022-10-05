@@ -37,6 +37,7 @@ zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
 [[ -d ~/.zsh/zsh-autocomplete ]] ||
     git clone --depth 1 -- https://github.com/marlonrichert/zsh-autocomplete.git ~/.zsh/zsh-autocomplete
+# zsh-autocomplete currently crashes Putty/Kitty when connecting to Rpi, so don't source at this time.
 # source ~/.zsh/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 
 [[ -d ~/.zsh/zsh-autosuggestions ]] ||
