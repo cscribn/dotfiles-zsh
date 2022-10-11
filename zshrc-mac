@@ -1,5 +1,5 @@
-alias ls="gls -h --color=auto --group-directories-first"
 eval "$(/opt/homebrew/bin/oh-my-posh init zsh --config ~/.oh-my-posh/themes/powerlevel10k_ansi.omp.json)"
+alias ls="gls -h --color=auto --group-directories-first"
 
 [[ -d ~/.zsh/zsh-autocomplete ]] ||
 	git clone --depth 1 -- https://github.com/marlonrichert/zsh-autocomplete.git ~/.zsh/zsh-autocomplete
