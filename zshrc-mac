@@ -1,5 +1,6 @@
 eval "$(/opt/homebrew/bin/oh-my-posh init zsh --config ~/.oh-my-posh/themes/powerlevel10k_ansi.omp.json)"
 alias ls="gls -h --color=auto --group-directories-first"
+export PATH=/opt/homebrew/bin:$PATH
 
 # Use modern completion system
 setopt histignorealldups sharehistory
@@ -51,8 +52,6 @@ source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
 	git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
 rm -f ~/.zsh/zsh-autosuggestions/.ruby-version
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-
-export PATH=/opt/homebrew/bin:$PATH
 
 # nvm with lazy loading
 lazynvm() {
