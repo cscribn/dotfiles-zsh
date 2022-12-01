@@ -1,4 +1,4 @@
-eval "$(/opt/homebrew/bin/oh-my-posh init zsh --config ~/.oh-my-posh/themes/powerlevel10k_rainbow_ansi.omp.json)"
+eval "$(/opt/homebrew/bin/oh-my-posh init zsh --config ~/.config/oh-my-posh/themes/powerlevel10k_rainbow_ansi.omp.json)"
 alias ls="gls -h --color=auto --group-directories-first"
 export PATH=/opt/homebrew/bin:$PATH
 
