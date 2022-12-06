@@ -44,11 +44,6 @@ zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
     git clone https://github.com/zsh-users/zsh-syntax-highlighting.git  ~/.zsh/zsh-syntax-highlighting
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
 
-[[ -d ~/.zsh/zsh-autocomplete ]] ||
-    git clone --depth 1 -- https://github.com/marlonrichert/zsh-autocomplete.git ~/.zsh/zsh-autocomplete
-# zsh-autocomplete currently crashes on load
-# source ~/.zsh/zsh-autocomplete/zsh-autocomplete.plugin.zsh
-
 [[ -d ~/.zsh/zsh-autosuggestions ]] ||
     git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
 rm -f ~/.zsh/zsh-autosuggestions/.ruby-version
