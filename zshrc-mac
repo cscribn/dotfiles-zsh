@@ -1,4 +1,4 @@
-export PATH=/opt/homebrew/bin:$PATH
+export PATH=/opt/homebrew/bin:${PATH}
 eval "$(/opt/homebrew/bin/oh-my-posh init zsh --config ~/.config/oh-my-posh/themes/powerlevel10k_rainbow_ansi.omp.json)"
 alias ls="lsd --group-directories-first"
 
@@ -51,11 +51,11 @@ source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 # nvm with lazy loading
 lazynvm() {
 	unset -f nvm node npm
-	export NVM_DIR="$HOME/.nvm"
+	export NVM_DIR="${HOME}/.nvm"
 	[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
 }
 
-[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+[[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ]] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
 nvm() {
   lazynvm
@@ -72,10 +72,10 @@ npm() {
   npm "$@"
 }
 
-export PYENV_ROOT="$HOME/.pyenv"
-command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+export PYENV_ROOT="${HOME}/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:${PATH}"
 eval "$(pyenv init -)"
 pyenv shell 2.7.18
 
-export PATH="$HOME/.rbenv/bin:$PATH"
+export PATH="${HOME}/.rbenv/bin:${PATH}"
 eval "$(rbenv init -)"

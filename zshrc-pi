@@ -49,5 +49,5 @@ source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
 rm -f ~/.zsh/zsh-autosuggestions/.ruby-version
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-export PATH="$HOME/.rbenv/bin:$PATH"
+export PATH="${HOME}/.rbenv/bin:${PATH}"
 eval "$(rbenv init -)"
