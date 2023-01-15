@@ -1,5 +1,5 @@
 export PATH=/opt/homebrew/bin:${PATH}
-eval "$(/opt/homebrew/bin/oh-my-posh init zsh --config ~/.config/oh-my-posh/themes/powerlevel10k_rainbow_ansi.omp.json)"
+eval "$(/opt/homebrew/bin/oh-my-posh init zsh --config ~/.config/oh-my-posh/themes/powerlevel10k_amped_rainbow.omp.json)"
 alias ls="lsd --group-directories-first"
 
 # Use modern completion system
