@@ -25,7 +25,7 @@ if whence dircolors >/dev/null; then
 	zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 else
 	export CLICOLOR=1
-  	zstyle ':completion:*:default' list-colors ''
+	zstyle ':completion:*:default' list-colors ''
 fi
 
 zstyle ':completion:*' list-colors ''
@@ -43,7 +43,13 @@ zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
     git clone https://github.com/zsh-users/zsh-syntax-highlighting.git  ~/.zsh/zsh-syntax-highlighting
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
 
-[[ -d ~/.zsh/zsh-autosuggestions ]] ||
-    git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
-rm -f ~/.zsh/zsh-autosuggestions/.ruby-version
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+export ZSH_AUTOSUGGEST_MANUAL_REBIND=1
+
+if [[ ! -d ~/.zsh/zsh-autosuggestions ]]; then
+	git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
+	rm -f ~/.zsh/zsh-autosuggestions/.ruby-version
+	source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+	_zsh_autosuggest_bind_widgets
+else
+	source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+fi
