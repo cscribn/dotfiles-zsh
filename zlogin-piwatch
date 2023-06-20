@@ -1,0 +1,11 @@
+export ADAPTER=rpi
+export COMPRESS=lzma
+export GCC_PATH="${HOME}/opt/xpack-arm-none-eabi-gcc-10.2.1-1.1/bin/"
+export OPENOCD="${HOME}/.local/xPacks/@xpack-dev-tools/openocd/0.11.0-1.1/.content/bin/openocd"
+export PATH="${PATH}:${HOME}/opt/xpack-arm-none-eabi-gcc-10.2.1-1.1/bin/"
+
+[[ -d ${HOME}/opt/game-and-watch-backup ]] ||
+    git clone https://github.com/ghidraninja/game-and-watch-backup.git  "${HOME}/opt/game-and-watch-backup"
+
+[[ -d ${HOME}/opt/game-and-watch-flashloader ]] ||
+    git clone https://github.com/ghidraninja/game-and-watch-flashloader.git  "${HOME}/opt/game-and-watch-flashloader"
