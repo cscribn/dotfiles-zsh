@@ -39,13 +39,15 @@ zstyle ':completion:*' verbose true
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
-[[ -d ~/.zsh/zsh-syntax-highlighting ]] ||
-	git clone https://github.com/zsh-users/zsh-syntax-highlighting.git  ~/.zsh/zsh-syntax-highlighting
+[[ -d ~/.zsh/zsh-syntax-highlighting ]] || \
+    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git  ~/.zsh/zsh-syntax-highlighting
+
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
 
-[[ -d ~/.zsh/zsh-autosuggestions ]] ||
-	git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
-rm -f ~/.zsh/zsh-autosuggestions/.ruby-version
+[[ -d ~/.zsh/zsh-autosuggestions ]] || \
+	git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions && \
+	rm -f ~/.zsh/zsh-autosuggestions/.ruby-version
+
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 export NVM_DIR="$HOME/.nvm"
