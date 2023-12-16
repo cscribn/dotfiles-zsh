@@ -51,6 +51,9 @@ source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
 
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
+[[ -d ~/motd ]] || \
+	git clone https://github.com/cscribn/motd ~/motd
+
 export PATH="${HOME}/.rbenv/bin:${PATH}"
 eval "$(rbenv init -)"
 
