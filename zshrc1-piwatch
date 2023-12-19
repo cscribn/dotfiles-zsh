@@ -10,4 +10,4 @@ export PATH="${PATH}:${HOME}/opt/xpack-arm-none-eabi-gcc-10.2.1-1.1/bin/"
 [[ -d ${HOME}/opt/game-and-watch-flashloader ]] ||
     git clone https://github.com/ghidraninja/game-and-watch-flashloader.git  "${HOME}/opt/game-and-watch-flashloader"
 
-${HOME}/motd/motd-pi.sh
+${HOME}/motd/motd-rpi.sh
