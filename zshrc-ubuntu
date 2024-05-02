@@ -1,7 +1,7 @@
 eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh/themes/powerlevel10k_amped_rainbow.omp.json)"
 export TERM=xterm-256color
 export COLORTERM=truecolor
-alias ls='lsd --group-directories-first'
+#alias ls='lsd --group-directories-first'
 
 # Use modern completion system
 setopt histignorealldups sharehistory
