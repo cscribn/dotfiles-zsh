@@ -1,7 +1,6 @@
 eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh/themes/powerlevel10k_amped_rainbow.omp.json)"
 export TERM=xterm-256color
 export COLORTERM=truecolor
-# alias ls='lsd --group-directories-first'
 
 # Use modern completion system
 setopt histignorealldups sharehistory
@@ -51,13 +50,13 @@ source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
 
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-# [[ -d ~/motd ]] || \
-# 	git clone https://github.com/cscribn/motd ~/motd
-
 export PATH="${HOME}/pwsh:${PATH}"
 
 export PATH="${HOME}/.rbenv/bin:${PATH}"
 eval "$(rbenv init -)"
+
+# motd
+run-parts --lsbsysinit /etc/update-motd.d
 
 if [[ -f "${HOME}/.zshrc1" ]]; then
     source "${HOME}/.zshrc1"
