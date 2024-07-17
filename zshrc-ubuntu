@@ -2,6 +2,7 @@ eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh/themes/powerlevel10k_a
 export TERM=xterm-256color
 export COLORTERM=truecolor
 alias ls='lsd --group-directories-first'
+alias fastfetch='neofetch'
 
 # Use modern completion system
 setopt histignorealldups sharehistory
