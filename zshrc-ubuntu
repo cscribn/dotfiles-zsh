@@ -57,9 +57,6 @@ export PATH="${HOME}/powershell:${PATH}"
 export PATH="${HOME}/.rbenv/bin:${PATH}"
 eval "$(rbenv init -)"
 
-# motd
-run-parts --lsbsysinit /etc/update-motd.d
-
 if [[ -f "${HOME}/.zshrc1" ]]; then
     source "${HOME}/.zshrc1"
 fi
