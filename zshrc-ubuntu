@@ -54,9 +54,6 @@ source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 export PATH="${HOME}/powershell:${PATH}"
 
-export PATH="${HOME}/.rbenv/bin:${PATH}"
-eval "$(rbenv init -)"
-
 if [[ -f "${HOME}/.zshrc1" ]]; then
     source "${HOME}/.zshrc1"
 fi
