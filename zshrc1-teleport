@@ -60,7 +60,7 @@ install-teleport() {
         fi
         
         # Install the package
-        if ! sudo installer -pkg ${pkg} -target /; then
+        if ! sudo -A installer -pkg ${pkg} -target /; then
             echo "Error: Failed to install the package."
             rm ${pkg}    # Cleanup the downloaded package
             return 1
