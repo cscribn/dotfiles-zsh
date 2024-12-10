@@ -51,3 +51,7 @@ rm -f ~/.zsh/zsh-autosuggestions/.ruby-version
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 source <(fzf --zsh)\
+
+if whence mise > /dev/null; then
+    eval "$(mise activate zsh)"
+fi
