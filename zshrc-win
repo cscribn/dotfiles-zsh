@@ -53,5 +53,5 @@ source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source <(fzf --zsh)\
 
 if whence mise > /dev/null; then
-    eval "$(mise activate zsh)"
+    export PATH="$PATH:$LOCALAPPDATA/mise/shims"
 fi
