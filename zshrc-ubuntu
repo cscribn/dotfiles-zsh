@@ -1,11 +1,10 @@
-eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh/themes/powerlevel10k_amped_rainbow.omp.json)"
 export TERM=xterm-256color
 export COLORTERM=truecolor
 alias ls='lsd --group-directories-first'
 alias fastfetch='neofetch'
 
 # Use modern completion system
-setopt histignorealldups sharehistory
+setopt histignorealldups
 
 bindkey -e # Use emacs keybindings even if our EDITOR is set to vi
 
@@ -13,8 +12,11 @@ HISTSIZE=1000 # Keep 1000 lines of history within the shell and save it to ~/.zs
 SAVEHIST=1000
 HISTFILE=~/.zsh_history
 
-autoload -Uz compinit
-compinit
+if [[ -n ~/.zcompdump(#qN.mh+24) ]]; then
+	compinit
+else
+	compinit -C
+fi
 
 zstyle ':completion:*' auto-description 'specify: %d'
 zstyle ':completion:*' completer _expand _complete _correct _approximate
@@ -47,9 +49,9 @@ zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
 
 [[ -d ~/.zsh/zsh-autosuggestions ]] || \
-	git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
+	git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions && \
+	rm -f ~/.zsh/zsh-autosuggestions/.ruby-version
 
-rm -f ~/.zsh/zsh-autosuggestions/.ruby-version
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 export PATH="${HOME}/powershell:${PATH}"
@@ -57,3 +59,5 @@ export PATH="${HOME}/powershell:${PATH}"
 if [[ -f "${HOME}/.zshrc1" ]]; then
     source "${HOME}/.zshrc1"
 fi
+
+eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh/themes/powerlevel10k_amped_rainbow.omp.json)"

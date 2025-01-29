@@ -1,5 +1,4 @@
 export PATH=/opt/homebrew/bin:/opt/homebrew/sbin:${PATH}
-eval "$(/opt/homebrew/bin/oh-my-posh init zsh --config ~/.config/oh-my-posh/themes/powerlevel10k_amped_rainbow.omp.json)"
 alias ls="lsd --group-directories-first"
 
 # Use modern completion system
@@ -11,8 +10,11 @@ HISTSIZE=1000 # Keep 1000 lines of history within the shell and save it to ~/.zs
 SAVEHIST=1000
 HISTFILE=~/.zsh_history
 
-autoload -Uz compinit
-compinit
+if [[ -n ~/.zcompdump(#qN.mh+24) ]]; then
+	compinit
+else
+	compinit -C
+fi
 
 zstyle ':completion:*' auto-description 'specify: %d'
 zstyle ':completion:*' completer _expand _complete _correct _approximate
@@ -45,12 +47,10 @@ zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
 
 [[ -d ~/.zsh/zsh-autosuggestions ]] || \
-	git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
+	git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions && \
+	rm -f ~/.zsh/zsh-autosuggestions/.ruby-version
 
-rm -f ~/.zsh/zsh-autosuggestions/.ruby-version
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-
-source <(fzf --zsh)
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -72,3 +72,5 @@ export HEX_CACERTS_PATH=$ZSCALER_CERTIFICATE_BUNDLE
 if [[ -f "${HOME}/.zshrc1" ]]; then
     source "${HOME}/.zshrc1"
 fi
+
+eval "$(/opt/homebrew/bin/oh-my-posh init zsh --config ~/.config/oh-my-posh/themes/powerlevel10k_amped_rainbow.omp.json)"
