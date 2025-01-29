@@ -11,12 +11,7 @@ SAVEHIST=1000
 HISTFILE=~/.zsh_history
 
 autoload -Uz compinit
-
-if [[ -n ~/.zcompdump(#qN.mh+24) ]]; then
-	compinit
-else
-	compinit -C
-fi
+compinit -C
 
 zstyle ':completion:*' auto-description 'specify: %d'
 zstyle ':completion:*' completer _expand _complete _correct _approximate

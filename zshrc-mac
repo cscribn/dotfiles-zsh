@@ -10,11 +10,8 @@ HISTSIZE=1000 # Keep 1000 lines of history within the shell and save it to ~/.zs
 SAVEHIST=1000
 HISTFILE=~/.zsh_history
 
-if [[ -n ~/.zcompdump(#qN.mh+24) ]]; then
-	compinit
-else
-	compinit -C
-fi
+autoload -Uz compinit
+compinit -C
 
 zstyle ':completion:*' auto-description 'specify: %d'
 zstyle ':completion:*' completer _expand _complete _correct _approximate
