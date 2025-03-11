@@ -4,6 +4,8 @@ alias ls='lsd --group-directories-first'
 alias fastfetch='neofetch'
 alias raspi2png='raspi2png -p "raspi2png_$(date '+%Y-%m-%d_%H:%M:%S').png"'
 
+export PATH=$PATH:~/.cargo/bin/
+
 # Use modern completion system
 setopt histignorealldups
 
@@ -52,13 +54,13 @@ source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
 
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-[[ -d ~/motd ]] || \
-	git clone https://github.com/cscribn/motd ~/motd
-
-source ~/motd/motd-pi.sh
-
 if [[ -f "${HOME}/.zshrc1" ]]; then
     source "${HOME}/.zshrc1"
 fi
 
 eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh/themes/powerlevel10k_amped_rainbow.omp.json)"
+
+[[ -d ~/motd ]] || \
+	git clone https://github.com/cscribn/motd ~/motd
+
+~/motd/motd-rpi.sh
