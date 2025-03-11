@@ -55,7 +55,7 @@ source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 [[ -d ~/motd ]] || \
 	git clone https://github.com/cscribn/motd ~/motd
 
-export PATH="${HOME}/powershell:${PATH}"
+source ~/motd/motd-pi.sh
 
 if [[ -f "${HOME}/.zshrc1" ]]; then
     source "${HOME}/.zshrc1"
