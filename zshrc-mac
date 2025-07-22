@@ -1,5 +1,6 @@
 export PATH=/opt/homebrew/bin:/opt/homebrew/sbin:${PATH}
 alias ls="lsd --group-directories-first"
+alias mcp-atlassian='npx -y mcp-remote https://mcp.atlassian.com/v1/sse'
 
 # Use modern completion system
 setopt histignorealldups sharehistory
