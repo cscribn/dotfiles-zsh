@@ -62,4 +62,4 @@ eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh/themes/powerlevel10k_a
 [[ -d ~/motd ]] || \
 	git clone https://github.com/cscribn/motd ~/motd
 
-~/motd/motd-rpi.sh
+~/motd/motd-fastfetch.sh
