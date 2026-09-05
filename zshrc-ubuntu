@@ -48,4 +48,4 @@ source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
 
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-eval "$(/opt/homebrew/bin/oh-my-posh init zsh --config ~/.config/oh-my-posh/themes/powerlevel10k_amped_rainbow.omp.json)"
+eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh/themes/powerlevel10k_amped_rainbow.omp.json)"
